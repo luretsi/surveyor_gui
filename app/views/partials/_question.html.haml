@@ -7,19 +7,19 @@
     %span.help= q.help_text_for(@render_context, I18n.locale)
     - case renderer
     - when  :image, :label, :default_label, :inline_label, :repeater_label
-    - when :dropdown, :inline_dropdown, :default_dropdown, :slider, :repeater_dropdown, :stars
+    - when :dropdown, :inline_dropdown, :default_dropdown, :slider, :repeater_dropdown
       - r = response_for(@response_set, q, nil, rg)
       - i = response_idx
       = f.semantic_fields_for i, r do |ff|
         = ff.input :question_id, :as => :quiet
-        = ff.input :response_group, :as => :quiet, :input_html => { :value => rg } if g && g.display_type == "repeater"
+        = ff.input :response_group, :as => :quiet, :input_html => {:value => rg} if g && g.display_type == "repeater"
         = ff.input :api_id, :as => :quiet
         -# the next three lines add for sureyor_gui
         - if renderer==:stars
           = ff.input :integer_value, :as => :radio, :collection => [[nil,1],[nil,2],[nil,3],[nil,4],[nil,5]], :include_blank => (renderer != :slider), :label => q.text, :input_html => { :disabled => disabled }
           = ff.input :answer_id, :as => :quiet, :value => q.answers.first.id
         - else
-          = ff.input :answer_id, :as => :select, :collection => q.answers.map{|a| [a.text, a.id]}, :include_blank => (renderer != :slider), :label => q.text, :input_html => { :disabled => disabled }
+          = ff.input :answer_id, :as => :select, :collection => q.answers.map{|a| [a.text, a.id]}, :include_blank => (renderer != :slider), :label => q.text, :input_html => { :disabled => disabled, :required => q.mandatory? }
     - else # :default, :inline, :inline_default
       - if q.pick == "one"
         - r = response_for(@response_set, q, nil, rg)
