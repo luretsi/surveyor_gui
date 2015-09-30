@@ -42,10 +42,10 @@ Gem::Specification.new do |s|
   s.add_dependency 'surveyor', '~> 1.4.1.pre'
   s.add_dependency 'will_paginate', '~> 3.0.5'
 
-  s.add_dependency 'simple_form', '~> 3.0.2'
+  s.add_dependency 'simple_form', '~> 3.1.0'
   s.add_dependency 'carrierwave'
   s.add_dependency 'colorbox-rails', '~> 0.1.1'
   s.add_dependency 'jquery-form-rails', '~> 1.0.1'
-  s.add_dependency 'deep_cloneable', '~> 2.0.0'  
-  s.add_dependency 'lazy_high_charts' 
+  s.add_dependency 'deep_cloneable', '~> 2.0.0'
+  s.add_dependency 'lazy_high_charts'
 end
