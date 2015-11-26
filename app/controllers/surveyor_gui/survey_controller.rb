@@ -1,4 +1,6 @@
 class SurveyorGui::SurveyController < ApplicationController
+  load_and_authorize_resource
+  
   def show
     @title = "User Will See this Survey"
     @survey = Survey.find(params[:survey_id])

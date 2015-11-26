@@ -2,6 +2,8 @@ require 'complex'
 include Math
 
 class SurveyorGui::ReportsController < ApplicationController
+  load_and_authorize_resource
+  
   include ReportPreviewWrapper
 
   # ReportPreviewWrapper wraps preview in a database transaction so test data is not permanently saved.
