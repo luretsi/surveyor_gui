@@ -2,7 +2,7 @@ require 'complex'
 include Math
 
 class SurveyorGui::ReportsController < ApplicationController
-  load_and_authorize_resource
+ # load_and_authorize_resource
   
   include ReportPreviewWrapper
 
