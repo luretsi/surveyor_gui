@@ -45,7 +45,7 @@ RSpec.configure do |config|
   config.include WaitForAjax
   config.include Capybara::DSL
   config.treat_symbols_as_metadata_keys_with_true_values = true
-
+  config.infer_spec_type_from_file_location!
   # == Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
