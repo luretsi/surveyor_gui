@@ -246,7 +246,7 @@ describe SurveyorController do
   end
 
   context "#export" do
-    render_views
+    #render_views
 
     let(:json) {
       get :export, :survey_code => survey.access_code, :format => 'json'
