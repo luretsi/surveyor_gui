@@ -19,6 +19,8 @@ require 'database_cleaner'
 require 'rspec/retry'
 require 'rack/utils'
 
+require 'rspec/collection_matchers'
+
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir["./spec/support/**/*.rb"].sort.each {|f| require f}
