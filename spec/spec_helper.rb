@@ -43,7 +43,7 @@ RSpec.configure do |config|
   config.include SurveyorAPIHelpers
   config.include SurveyorUIHelpers
   config.include WaitForAjax
-
+  config.include Capybara::DSL
   config.treat_symbols_as_metadata_keys_with_true_values = true
 
   # == Mock Framework
